@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Selection</title>
+    <link rel="stylesheet" href="room_check.css">
+</head>
+<body>
+    <div class="background">
+        <div class="booking-form">
+            <h2>Select Room Type</h2>
+            <form action="room_check.php" method="post">
+                <label for="room_type">Room Type:</label>
+                <select name="room_type" id="room_type" required>
+                    <option value="Classic Room">Classic Room</option>
+                    <option value="Classic Double Room">Classic Double Room</option>
+                    <option value="Premium Double Room">Premium Double Room</option>
+                    <option value="Deluxe Suite">Deluxe Suite</option>
+                    <option value="Standard Room">Standard Room</option>
+                    <option value="Executive Suite">Executive Suite</option>
+                </select>
+
+                <label for="num_rooms">Number of Rooms:</label>
+                <input type="number" name="num_rooms" id="num_rooms" required min="1">
+
+                <button type="submit">Check Availability</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
