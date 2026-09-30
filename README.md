@@ -12,29 +12,23 @@ A PHP and MySQL hotel website and management application. The project includes a
 
 ## Requirements
 
-- PHP with the `mysqli` extension
-- MySQL
+- Xamp
 
-The PHP pages expect a database named `project`. Database connection settings are currently defined in the PHP files. Configure them for your local MySQL instance before using database-backed pages. This repository does not currently include a database schema or seed data, so the required tables and records must be created separately.
 
-Admin login credentials are read from the `HOTEL_ADMIN_USERNAME` and `HOTEL_ADMIN_PASSWORD` environment variables. Set both variables in your server environment; login will remain unavailable if either is unset.
 
-## Run locally
+Admin login credentials are read from the root `.env` file, with process environment variables as a fallback. Copy `.env.example` to `.env` and set both values. Keep `.env` private; it is excluded from Git. Login remains unavailable if either credential is blank or unset.
 
-From the project root, start PHP's development server:
+## Run with XAMPP
 
-```bash
-php -S localhost:8000
-```
+1. Install and open the XAMPP Control Panel.
+2. Copy the entire project folder into `C:\xampp\htdocs\CSE`. The folder should contain `index.html`, `project.sql`, and the project subfolders.
+3. In the XAMPP Control Panel, click **Start** beside **Apache** and **MySQL**.
+4. Click **Admin** beside **MySQL** to open phpMyAdmin. Create a database named `project`.
+5. Select the `project` database, open the **Import** tab, choose `C:\xampp\htdocs\CSE\project.sql`, and click **Import** or **Go** to load the schema and demo records.
+6. In the project folder, copy `.env.example` to `.env` and set `HOTEL_ADMIN_USERNAME` and `HOTEL_ADMIN_PASSWORD` in `.env` for the admin login.
+7. Open [http://localhost/CSE/](http://localhost/CSE/) in your browser.
 
-On PowerShell, set the admin credentials before starting the server:
-
-```powershell
-$env:HOTEL_ADMIN_USERNAME = "admin"
-$env:HOTEL_ADMIN_PASSWORD = "replace-with-a-strong-password"
-```
-
-Open [http://localhost:8000](http://localhost:8000) to view the homepage. Database-backed features require the MySQL setup described above.
+The URL path must match the project folder's name inside `htdocs`. For example, if you use a folder name other than `CSE`, replace `CSE` in the URL with that folder name.
 
 ## Project structure
 
